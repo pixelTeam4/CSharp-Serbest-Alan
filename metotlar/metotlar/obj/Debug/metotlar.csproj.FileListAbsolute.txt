@@ -1,0 +1,10 @@
+C:\Users\dell\source\repos\metotlar\metotlar\bin\Debug\metotlar.exe.config
+C:\Users\dell\source\repos\metotlar\metotlar\bin\Debug\metotlar.exe
+C:\Users\dell\source\repos\metotlar\metotlar\bin\Debug\metotlar.pdb
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.csprojAssemblyReference.cache
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.Form1.resources
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.Properties.Resources.resources
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.csproj.GenerateResource.cache
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.csproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.exe
+C:\Users\dell\source\repos\metotlar\metotlar\obj\Debug\metotlar.pdb
