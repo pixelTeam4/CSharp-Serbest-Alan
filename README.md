@@ -1,0 +1,2 @@
+# denemeGithub
+bu bir denemedir
