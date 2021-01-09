@@ -1,2 +1,1 @@
-# denemeGithub
-bu bir denemedir
+Buraya C# ile ilgili bütün içeriklerinizi Atabilirsiniz.
