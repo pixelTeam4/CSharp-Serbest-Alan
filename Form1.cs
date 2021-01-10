@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
 
-namespace metotlar
+namespace _10._01._2021_Ders
 {
     public partial class Form1 : Form
     {
@@ -17,86 +17,109 @@ namespace metotlar
         {
             InitializeComponent();
         }
+        ArrayList name = new ArrayList();
+        ArrayList surName = new ArrayList();
+        ArrayList date = new ArrayList();
+        ArrayList number = new ArrayList();
 
-        public void Ekle()
+        //public void ara(string ara)
+        //{
+        //    if (name.Contains(ara)==true)
+        //    {
+        //        lblName.Text = nameTut;
+        //        lblSurname.Text = surNameTut;
+        //        lblNumber.Text = numberTut;
+        //        lblDate.Text = dateTut;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Böyle bir Kayıt yok");
+        //    }
+
+        //}
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            lstListe.Items.Add(txtMetin.Text);
+            listBox1.Items.Remove(listBox1.SelectedItem);
+        }
+        string nameTut;
+        string surNameTut;
+        string numberTut;
+        string dateTut;
+        string searchIndex;
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            nameTut = txtName.Text;
+            surNameTut = txtSurname.Text;
+            numberTut = maskedTextBox1.Text;
+            dateTut = maskedTextBox2.Text;
+            name.Add(nameTut);
+            surName.Add(surNameTut);
+            number.Add(numberTut);
+            date.Add(dateTut);
+            listBox1.Items.Add(nameTut + " " + surNameTut + " " + numberTut + " " + dateTut);
         }
 
-        private void btnEkle_Click(object sender, EventArgs e)
+        private void btnAra_Click(object sender, EventArgs e)
         {
-            Ekle();
-        }
-
-
-
-        private void btnHesapla_Click(object sender, EventArgs e)
-        {
-            int sayi1 = Convert.ToInt32(txtSayi1.Text);
-            int sayi2 = Convert.ToInt32(txtSayi2.Text);
-            lblSonuc.Text=(DortIslem(sayi1, sayi2).ToString());
-
-        }
-
-        public double DortIslem(int a, int b)
-        {
-            
-            string islem = cmbIslem.Text;
-
-            if (islem == "+")
+            searchIndex = txtSearchIndex.Text;
+            if (comboBox1.SelectedItem == "İsim")
             {
-                return (a + b);
-            }
-            else if (islem == "-")
-            {
-                return (a - b);
-            }
-            else if (islem == "*")
-            {
-                return (a * b);
-            }
-            else if (islem == "/")
-            {
-                return (a / b);
-            }
-            else
-            {
-                MessageBox.Show("İşlem seçiniz.");
-                return 0;
-            }
-        }
-        ArrayList sirala = new ArrayList();
-
-        public object Siralama(int a, int b, int c)
-        {
-            sirala.Add(a);
-            sirala.Add(b);
-            sirala.Add(c);
-
-            sirala.Sort();
-            sirala.Reverse();
-
-            return sirala;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (label1.Text=="label1")
-            {
-                int a = Convert.ToInt32(textBox1.Text);
-                int b = Convert.ToInt32(textBox2.Text);
-                int c = Convert.ToInt32(textBox3.Text);
-
-                Siralama(a, b, c);
-
-                string toplam = "";
-                for (int i = 0; i < sirala.Count; i++)
+                if (name.Contains(searchIndex) ==true)
                 {
-                    toplam += sirala[i].ToString() + ">";
+                    lblName.Text = nameTut;
+                    lblSurname.Text = surNameTut;
+                    lblNumber.Text = numberTut;
+                    lblDate.Text = dateTut;
                 }
-                toplam = toplam.Substring(0, toplam.Length - 1);
-                label1.Text = toplam;
+                else
+                {
+                    MessageBox.Show("Birşeyler Ters gitti");
+                }
+                
+            }
+            else if (comboBox1.SelectedItem == "Soyisim")
+            {
+                if (surName.Contains(searchIndex) == true)
+                {
+                    lblName.Text = nameTut;
+                    lblSurname.Text = surNameTut;
+                    lblNumber.Text = numberTut;
+                    lblDate.Text = dateTut;
+                }
+                else
+                {
+                    MessageBox.Show("Birşeyler Ters gitti");
+                }
+            }
+            else if (comboBox1.SelectedItem == "Telefon")
+            {
+                if (number.Contains(searchIndex) == true)
+                {
+                    lblName.Text = nameTut;
+                    lblSurname.Text = surNameTut;
+                    lblNumber.Text = numberTut;
+                    lblDate.Text = dateTut;
+                }
+                else
+                {
+                    MessageBox.Show("Birşeyler Ters gitti");
+                }
+            }
+            else if (comboBox1.SelectedItem == "D.Tarihi")
+            {
+                if (date.Contains(searchIndex) == true)
+                {
+                    lblName.Text = nameTut;
+                    lblSurname.Text = surNameTut;
+                    lblNumber.Text = numberTut;
+                    lblDate.Text = dateTut;
+                }
+                else
+                {
+                    MessageBox.Show("Birşeyler Ters gitti");
+                }
             }
         }
     }
-
 }
